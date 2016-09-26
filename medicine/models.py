@@ -11,4 +11,4 @@ class Medicine(models.Model):
 
 
     def __str__(self):
-        return self.supplier_name
+        return self.name
