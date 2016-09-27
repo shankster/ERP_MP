@@ -22,3 +22,7 @@ urlpatterns = [
     url(r'^medicine/', include('medicine.urls')),
     url(r'^supplier/', include('supplier.urls')),
 ]
+
+
+admin.site.site_header = ("Macklaey Pharmaceuticals")
+admin.site.site_title = ("Site Admin")

@@ -357,53 +357,57 @@ model</columns>
       <columns>session_key</columns>
       <primary>1</primary>
     </key>
-    <column id="86" parent="12" name="medicine_name">
+    <column id="86" parent="12" name="serial_no">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER UNSIGNED(0,-1)|4</data-type>
+    </column>
+    <column id="87" parent="12" name="name">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(100000)(0,-1)|12</data-type>
     </column>
-    <column id="87" parent="12" name="medicine_expirydate">
+    <column id="88" parent="12" name="expiry_date">
       <mandatory>1</mandatory>
       <data-type>DATE(0,-1)|12</data-type>
     </column>
-    <column id="88" parent="12" name="medicine_mfgdate">
+    <column id="89" parent="12" name="manufacturing_date">
       <mandatory>1</mandatory>
       <data-type>DATE(0,-1)|12</data-type>
     </column>
-    <column id="89" parent="12" name="medicine_id">
+    <column id="90" parent="12" name="stock_units">
       <mandatory>1</mandatory>
-      <data-type>INTEGER UNSIGNED(0,-1)|4</data-type>
+      <data-type>INTEGER(0,-1)|4</data-type>
     </column>
-    <key id="90" parent="12">
-      <columns>medicine_id</columns>
+    <key id="91" parent="12">
+      <columns>serial_no</columns>
       <primary>1</primary>
     </key>
-    <column id="91" parent="13" name="name">
+    <column id="92" parent="13" name="name">
       <data-type>(0,-1)|12</data-type>
     </column>
-    <column id="92" parent="13" name="seq">
+    <column id="93" parent="13" name="seq">
       <data-type>(0,-1)|12</data-type>
     </column>
-    <column id="93" parent="14" name="supplier_id">
+    <column id="94" parent="14" name="supplier_id">
       <mandatory>1</mandatory>
       <data-type>INTEGER UNSIGNED(0,-1)|4</data-type>
     </column>
-    <column id="94" parent="14" name="city">
+    <column id="95" parent="14" name="city">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(1000000)(0,-1)|12</data-type>
     </column>
-    <column id="95" parent="14" name="email_id">
+    <column id="96" parent="14" name="email_id">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(254)(0,-1)|12</data-type>
     </column>
-    <column id="96" parent="14" name="website">
+    <column id="97" parent="14" name="website">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(1000000)(0,-1)|12</data-type>
     </column>
-    <column id="97" parent="14" name="supplier_name">
+    <column id="98" parent="14" name="supplier_name">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(1000000)(0,-1)|12</data-type>
     </column>
-    <key id="98" parent="14">
+    <key id="99" parent="14">
       <columns>supplier_id</columns>
       <primary>1</primary>
     </key>
