@@ -21,8 +21,8 @@ class Supplier(models.Model):
         (KOLKATA, 'Kolkata'),
         (SHIMLA, 'Shimla'),
         )
-    supplier_ID=models.PositiveIntegerField(primary_key=True,help_text="Enter the supplier ID")
-    supplier_Name=models.CharField(max_length=1000000)
+    supplier_ID=models.AutoField(primary_key=True)
+    supplier_name=models.CharField(max_length=1000000)
     city=models.CharField(max_length=1000000,choices=CITY_LIST)
     email_ID=models.EmailField()
     website=models.URLField(max_length=1000000)
