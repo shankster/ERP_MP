@@ -11,10 +11,12 @@ class Medicine(models.Model):
 
     def __str__(self):
         return self.name
-
+'''
 class Stock(models.Model):
     name=models.ForeignKey(Medicine,on_delete=models.CASCADE)
     stocks=models.PositiveIntegerField(primary_key=True,default=0)
 
     def __str__(self):
         return str(self.name)
+
+'''

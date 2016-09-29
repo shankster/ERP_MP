@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Medicine,Stock
+from .models import Medicine
+#from .models import Stock
 
 # Create your views here.
 
