@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Suppliers Dashboard</title>
+
+    <link href="{% static "supplier/css/bootstrap.min.css"%}" rel="stylesheet">
+	<link href="{% static "supplier/css/style.css"%}" rel="stylesheet">
+
+    <link href="{% static "supplier/css/ie10-viewport-bug-workaround.css"%}" rel="stylesheet">
+
+    <link href="{% static "supplier/css/starter-template.css"%}" rel="stylesheet">
+    <script src="{% static "supplier/css/ie-emulation-modes-warning.js.download"%}"></script>
+  <link href="{% static "supplier/css/icon"%}" rel="stylesheet" id="stremioIcons"></head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Suppliers Dashboard</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/homepage">Home</a></li>
+            <li><a href="/medicine">Medicine</a></li>
+            <li><a href="/client">Client</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+{% if all_supplier %}
+    <table class="table table-hover">
+    <table class="table table-bordered">
+		<tr>
+			<th>Supplier ID</th>
+			<th>Name</th>
+			<th>City</th>
+			<th>Email ID</th>
+            <th>Website</th>
+            <th>Contact Number</th>
+		</tr>
+    {% for supplier in all_supplier %}
+        <tr>
+            <th>{{ supplier.supplier_ID}}</th>
+            <th>{{ supplier.supplier_name }}</th>
+            <th>{{ supplier.city }}</th>
+            <th>{{ supplier.email_ID }}</th>
+            <th>{{ supplier.website }}</th>
+            <th>{{ supplier.contact_number }}</th>
+        </tr>
+    {% endfor %}
+    	</table>
+    </table>
+{% else %}
+    <h1>No records found</h1>
+{% endif %}
+
+
+
+
+
+
+
+    <script src="{% static "supplier/css/jquery.min.js.download"%}"></script>
+    <script src="{% static "supplier/css/bootstrap.min.js.download"%}"></script>
+    <script src="{% static "supplier/css/ie10-viewport-bug-workaround.js.download"%}"></script>
+  
+
+</body>
+</html>

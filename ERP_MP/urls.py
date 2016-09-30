@@ -26,5 +26,5 @@ urlpatterns = [
 ]
 
 
-admin.site.site_header = ("Macklaey Pharmaceuticals")
+admin.site.site_header = ("Macleay Pharmaceuticals")
 admin.site.site_title = ("Site Admin")

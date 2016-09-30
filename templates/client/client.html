@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Client Dashboard</title>
+
+    <link href="{% static "medicine/css/bootstrap.min.css"%}" rel="stylesheet">
+	<link href="{% static "medicine/css/style.css"%}" rel="stylesheet">
+
+    <link href="{% static "medicine/css/ie10-viewport-bug-workaround.css"%}" rel="stylesheet">
+
+    <link href="{% static "medicine/css/starter-template.css"%}" rel="stylesheet">
+    <script src="{% static "medicine/css/ie-emulation-modes-warning.js.download"%}"></script>
+  <link href="{% static "medicine/css/icon"%}" rel="stylesheet" id="stremioIcons"></head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Client Dashboard</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/homepage">Home</a></li>
+            <li><a href="/medicine">Medicines</a></li>
+            <li><a href="/supplier">Supplier</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+{% if all_client %}
+    <table class="table table-hover">
+    <table class="table table-bordered">
+		<tr>
+			<th>Client ID</th>
+			<th>Name</th>
+			<th>Email Id</th>
+            <th>Contact Number</th>
+		</tr>
+    {% for client in all_client %}
+        <tr>
+            <th>{{ client.id }}</th>
+            <th>{{ client.name }}</th>
+            <th>{{ client.email_id }}</th>
+            <th>{{ client.contact_number }}</th>
+        </tr>
+    {% endfor %}
+    	</table>
+    </table>
+{% else %}
+    <h1>No records found</h1>
+{% endif %}
+
+
+
+
+
+
+
+    <script src="{% static "medicine/css/jquery.min.js.download"%}"></script>
+    <script src="{% static "medicine/css/bootstrap.min.js.download"%}"></script>
+    <script src="{% static "medicine/css/ie10-viewport-bug-workaround.js.download"%}"></script>
+  
+
+</body>
+</html>

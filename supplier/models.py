@@ -26,6 +26,7 @@ class Supplier(models.Model):
     city=models.CharField(max_length=1000000,choices=CITY_LIST)
     email_ID=models.EmailField()
     website=models.URLField(max_length=1000000)
+    contact_number=models.CharField(max_length=12,default='None')
 
     def __str__(self):
         return self.supplier_name

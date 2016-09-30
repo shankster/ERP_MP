@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Medicines Dashboard</title>
+
+    <link href="{% static "medicine/css/bootstrap.min.css"%}" rel="stylesheet">
+	<link href="{% static "medicine/css/style.css"%}" rel="stylesheet">
+
+    <link href="{% static "medicine/css/ie10-viewport-bug-workaround.css"%}" rel="stylesheet">
+
+    <link href="{% static "medicine/css/starter-template.css"%}" rel="stylesheet">
+    <script src="{% static "medicine/css/ie-emulation-modes-warning.js.download"%}"></script>
+  <link href="{% static "medicine/css/icon"%}" rel="stylesheet" id="stremioIcons"></head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Medicines Dashboard</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/homepage">Home</a></li>
+            <li><a href="/supplier">Suppliers</a></li>
+            <li><a href="/client">Client</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+{% if all_med %}
+    <table class="table table-hover">
+    <table class="table table-bordered">
+		<tr>
+			<th>Serial No.</th>
+			<th>Name</th>
+			<th>Manufacturing Date</th>
+			<th>Expiry Date</th>
+		</tr>
+    {% for medicine in all_med %}
+        <tr>
+            <th>{{ medicine.serial_no }}</th>
+            <th>{{ medicine.name }}</th>
+            <th>{{ medicine.manufacturing_date }}</th>
+            <th>{{ medicine.expiry_date }}</th>
+        </tr>
+    {% endfor %}
+    </table>
+    </table>
+
+{% comment %}
+{# Sorting Mechanism WIP #}
+ <table>
+    <h1>Stocks:</h1>
+        <tr>Name</tr>
+        <tr>Units</tr>
+        {{ set count = 0 }}
+    {% for med in all_med %}
+        {% if med.name %}
+            {% med.name[count]+=1 %}
+            <tr>{{ med.name }}</tr>
+            <tr>{{ med.name[count] }}</tr>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+    </table>
+{% endcomment %}
+
+
+
+
+
+
+
+{% else %}
+    <h1>No records found</h1>
+{% endif %}
+
+
+
+
+
+
+
+
+    <script src="{% static "medicine/css/jquery.min.js.download"%}"></script>
+    <script src="{% static "medicine/css/bootstrap.min.js.download"%}"></script>
+    <script src="{% static "medicine/css/ie10-viewport-bug-workaround.js.download"%}"></script>
+  
+
+</body>
+</html>
