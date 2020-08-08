@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Medicine(models.Model):
-    serial_no=models.AutoField(primary_key=True,max_length=100000)
-    name=models.CharField(primary_key=True,max_length=100000)
+    serial_no=models.AutoField(primary_key=True)
+    name=models.CharField(max_length=100000)
     manufacturing_date = models.DateField()
     expiry_date=models.DateField()
 
