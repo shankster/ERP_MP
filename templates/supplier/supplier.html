@@ -10,7 +10,9 @@
 	
     <title>Suppliers Dashboard</title>
 
-    <link href="{% static "supplier/css/bootstrap.min.css"%}" rel="stylesheet">
+    <!-- <link href="{% static "supplier/css/bootstrap.min.css"%}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link href="{% static "supplier/css/style.css"%}" rel="stylesheet">
 
     <link href="{% static "supplier/css/ie10-viewport-bug-workaround.css"%}" rel="stylesheet">
@@ -21,7 +23,7 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -34,11 +36,34 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/homepage">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
             <li><a href="/medicine">Medicine</a></li>
             <li><a href="/client">Client</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Supplier Dashboard</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/client">Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/medicine">Medicines</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/supplier">Suppliers<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
       </div>
     </nav>
 
@@ -59,8 +84,8 @@
             <th>{{ supplier.supplier_ID}}</th>
             <th>{{ supplier.supplier_name }}</th>
             <th>{{ supplier.city }}</th>
-            <th>{{ supplier.email_ID }}</th>
-            <th>{{ supplier.website }}</th>
+            <th><a href="mailto:{{ supplier.email_ID }}">{{ supplier.email_ID }}</a></th>
+            <th><a href={{ supplier.website }}>{{ supplier.website }}</a></th>
             <th>{{ supplier.contact_number }}</th>
         </tr>
     {% endfor %}
